@@ -7,6 +7,12 @@ get '/' do
 end
 
 get '/contacts' do
+	@contacts = []
+	@contacts << Contact.new("1001", "note1", "Julie", "Hache", "julie@bitmakerlabs.com")
+	@contacts << Contact.new("1002", "note2", "Will", "Richman", "will@bitmakerlabs.com")
+	@contacts << Contact.new("1003", "note3", "Chris", "Johnston", "chris@bitmakerlabs.com")
+
+	erb :contacts
 
 end
 
