@@ -6,14 +6,14 @@ class Rolodex
 		@id = 1000
 	end
 
-	def create_contact(fname, lname, email, notes)
+	def add_contact(new_contact)
 		# contact = Contact.new
 		# contact.first_name = fname 
 		# contact.last_name = lname
 		# contact.email = email
 		# contact.notes = notes
-		contact.id = @id
-		@contacts << contact
+		# contact.id = @id
+		@contacts << new_contact
 	end
 
 	def show_contacts
