@@ -13,13 +13,13 @@ class Contact
 		@email = email
 	end
 
-	def to_s
-		"ID: #{@id}\nFirst Name: #{@first_name}\nLast Name: #{@last_name}\nEmail: #{email} \nNotes #{@notes}"
-	end
+	# def to_s
+	# 	"ID: #{@id}\nFirst Name: #{@first_name}\nLast Name: #{@last_name}\nEmail: #{email} \nNotes #{@notes}"
+	# end
 
-	def self.get_id
-		@@counter += 1
-		@@counter
-	end
+	# def self.get_id
+	# 	@@counter += 1
+	# 	@@counter
+	# end
 
 end
