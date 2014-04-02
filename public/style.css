@@ -1,40 +1,69 @@
 body {
-	background-color: #F0CABE;
+	background-image:url('http://notflipper.com/cms/files/projects/various-patterns-/90s%20Clock%20Pattern.jpg');
 }
 
 .big {
-	font-family: Arial;
-  margin-left: auto;
-  margin-right: auto;
+	
+	font-family: Comic Sans MS;
+	color = #65514E;
+  margin-left: 30%;
+  
   width: 30em;
 	background-color: #DBD4B8;
 }
 
-.header {
+.navigation {
+	background-image:url('http://www.publicdomainpictures.net/pictures/60000/nahled/teal-butterfly-background.jpg');
+	float: left;
+	padding: 1em;
+	height: 29em;
+	width: 10em;
+	vertical-align: center;
+	border: 3px solid black;
+}
+
+.funnyimg {
+	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	height: 12em;
+	border: 9px dotted purple;
+	padding: 20px;
+
+}
+
+.header {
+	padding-left: 1em;
+	margin-left: auto;
+	margin-right: auto;
+	height: 8em;
 	width: 61em;
-	background-image:url('http://luxuryrealestatesalesnyc.com/wp-content/uploads/2013/01/customer-service_1.jpg');
-	
+	background-image:url('http://www.photos-public-domain.com/wp-content/uploads/2012/07/lime-green-diagonal-striped-plastic-texture.jpg');
+	min-height: 12em;
+  /*display: table-cell;*/
+  vertical-align: middle;
+  border: 2px solid black;
 	}
 
 #headertext {
-	min-height: 10em;
-	display: table-cell;
-	vertical-align: middle;
-	text-align: left 
+	color: orange;
+	font-size: 40px;
+	text-align: center; 
 	margin: auto;
-	font-family: Arial;
+	font-family: Comic Sans MS;
 
 }
-
 
 .footer {
-	font-family: Arial;
+	font-family: Comic Sans MS;
 	text-align: center;
 	font-size: 12px;
-
-
-
 }
+
+.sidebar-nav {
+	font-family: Comic Sans MS;
+	width: 100%;
+	height: 6em;
+	background-color: gainsboro;
+	border: 5px solid #E80C7A;
+}
+

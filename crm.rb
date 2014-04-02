@@ -14,15 +14,20 @@ get '/contacts' do
 end
 
 get 'contacts/:id' do
+	erb :show_contact  #file not created yet
 
 end
 
 get 'contacts/:id/edit' do
-
+	erb :edit_contact  #file not created yet
 end
 
 get '/contacts/new' do
 	erb :new_contact
+end
+
+get '/contacts/remove' do #file not yet created
+	erb :remove_contact
 end
 
 post '/contacts' do

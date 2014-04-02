@@ -5,25 +5,55 @@
 		<link rel="stylesheet" type="text/css" href="/style.css">
 	</head>
 
+	<body>
 		<header class = "header">
-			<h1 id = "headertext"> Customer Service is our #1 priority,<br> we swear... </h1>
+			<h1 id = "headertext"> <br>Customer Service is our #1 priority, honestly... </h1>
 		</header>
 	
-	<body>
+	<nav class = "navigation">
+		<p>Menu Sidebar</p>
+			<div class="sidebar-nav">
+				<a href="/">Return to Home</a>
+			</div>
+			
+			<p>
+				<a href="/contacts/new" class="sidebar-nav">Add a Contact</a>
+			</p>
+
+			<p>
+				<a href="/contacts/:id/edit" class="sidebar-nav">Edit a Contact</a>
+			</p>
+
+			<p>
+				<a href="/contacts" class="sidebar-nav">View all Contacts</a>
+			</p>
+
+			<p>
+				<a href="/contacts/remove" class="sidebar-nav">Remove a Contact</a>
+			</p>
+<!-- 
+			<li><a href="/contacts">View all contacts</a></li>
+			<li><a href="/contacts/:id/edit">Edit a contact</a></li>
+			<li><a href="/contacts">Display an attribute</a></li>
+			<li><a href="/contacts/:id">Display a contact</a></li>
+			<li><a href="/contacts">Remove a contact</a></li> -->
+    </ul>
+	</nav>
+	
+
 	<div class = "big">	
 		<h1>Jophis' Web CRM</h1>
+		<img class= "funnyimg" src="http://joedale.typepad.com/photos/uncategorized/customer_service_rep_talking_with_hands_.gif">
 
 		<%= yield %>
 
 	</div>
 
-	<nav>
-		Navigation, puts links here somehow
-	</nav>
+	
 
 	<footer class = "footer">
 
-		Copywrite Jophis Enterprises. 2014. Bitmaker Cohort 6 represent.
+		Copyright Jophis Enterprises. 2014. Bitmaker Cohort 6 represent.
 
 	</footer>
 
