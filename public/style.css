@@ -1,9 +1,40 @@
 body {
-	background-color: tomato;
+	background-color: #F0CABE;
 }
 
 .big {
+	font-family: Arial;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30em;
+	background-color: #DBD4B8;
+}
 
-	border: 1px; 
-	background-color: rgba(200, 200, 200, 0.6);
+.header {
+	margin-left: auto;
+	margin-right: auto;
+	height: 12em;
+	width: 61em;
+	background-image:url('http://luxuryrealestatesalesnyc.com/wp-content/uploads/2013/01/customer-service_1.jpg');
+	
+	}
+
+#headertext {
+	min-height: 10em;
+	display: table-cell;
+	vertical-align: middle;
+	text-align: left 
+	margin: auto;
+	font-family: Arial;
+
+}
+
+
+.footer {
+	font-family: Arial;
+	text-align: center;
+	font-size: 12px;
+
+
+
 }
