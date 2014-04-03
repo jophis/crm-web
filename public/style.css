@@ -3,12 +3,14 @@ body {
 }
 
 .big {
-	
+	text-align: center;
 	font-family: Comic Sans MS;
 	color = #65514E;
   margin-left: 30%;
-  
-  width: 30em;
+  padding-left: 1em;
+  padding-right: 1em;
+  width: 35em;
+  height: 34em;
 	background-color: #DBD4B8;
 }
 
@@ -62,7 +64,7 @@ body {
 .sidebar-nav {
 	font-family: Comic Sans MS;
 	width: 100%;
-	height: 6em;
+	height: 5em;
 	background-color: gainsboro;
 	border: 5px solid #E80C7A;
 }
