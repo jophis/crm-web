@@ -22,13 +22,17 @@ class Rolodex
 		end
 	end
 
-	def display_particular_contact(id)
-		@contacts.each do |contact|
-			if contact.id == id
-			puts contact
-			end
-		end
+	def find(contact_id)
+		@contacts.find {|contact| contact.id == contact_id}
 	end
+
+
+	# 	@contacts.each do |contact|
+	# 		if contact.id == contact_id
+	# 		puts contact
+	# 		end
+	# 	end
+	# end
 
 	def display_attribute(attribute)
 

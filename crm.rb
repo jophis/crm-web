@@ -4,6 +4,9 @@ require 'sinatra'
 
 @@rolodex = Rolodex.new
 
+#temp data 
+@@rolodex.add_contact(Contact.new(1000,"NOTES","Will","Richman","Email"))
+
 get '/' do 
 	@crm_app_name = "Joseph's world changing CRM"
 	erb :index
@@ -14,8 +17,8 @@ get '/contacts' do
 end
 
 get 'contacts/:id' do
-	erb :show_contact  #file not created yet
-
+	contact = @@rolodex.find(1000)
+	#erb :show_contact  #file not created yet (<input type= "search")
 end
 
 get 'contacts/:id/edit' do
@@ -34,4 +37,9 @@ post '/contacts' do
 	new_contact = Contact.new(params[:id], params[:notes], params[:first_name], params[:last_name], params[:email])
 	@@rolodex.add_contact(new_contact)
 	redirect to ('/contacts')
+end
+
+get "/contacts/1000" do
+	@contact = @@rolodex.find(1000)
+	erb :show_contact
 end
