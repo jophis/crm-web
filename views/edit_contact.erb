@@ -1,0 +1,19 @@
+<h1>Edit a Contact</h1>
+	<form action='/contacts/<%= @contact.id %>' method="POST">
+		<fieldset>
+			<legend>I am legend?</legend>
+			<input type="hidden" name="_method" value="put">
+
+			<label for = "firstname">First Name</label>
+			<input type="text" name="first_name" id="firstname"  autofocus required value="<%= @contact.first_name %>">
+
+			<label for = "lastname">Last Name</label>
+			<input type="text" name="last_name" id="lastname" required value="<%= @contact.last_name %>">
+			<label for = "e.mail">Email Address</label>
+			<input type="text" name="email" id="e.mail" required value="<%= @contact.email %>">
+			<textarea name = "notes" value="<%= @contact.notes %>"> </textarea>
+			<!-- <input type="text" name="note" value="<%= @contact.notes %>"> -->
+
+			<input type="submit" name="Press Here to Submit" value = "Submit Contact">
+		</fieldset>
+</form>

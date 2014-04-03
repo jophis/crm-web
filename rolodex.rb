@@ -3,7 +3,7 @@ class Rolodex
 
 	def initialize
 		@contacts = []
-		@id = 1000
+		
 	end
 
 	def add_contact(new_contact)
@@ -13,7 +13,10 @@ class Rolodex
 		# contact.email = email
 		# contact.notes = notes
 		# contact.id = @id
+		
+
 		@contacts << new_contact
+		
 	end
 
 	def show_contacts

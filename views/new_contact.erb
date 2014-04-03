@@ -1,25 +1,20 @@
 <h1>Create new Contact</h1>
-<form action='/contacts' method="POST">
-<fieldset>
-	<legend>legenddddd</legend>
+	<form action='/contacts' method="POST">
+		<fieldset>
+			<legend>I am legend?</legend>
 
+			<label for = "firstname">First Name</label>
+			<input type="text" name="first_name" id="firstname"  autofocus required placeholder= "First Name">
 
-	<label for = "firstname">First Name</label>
-	<input type="text" name="first_name" id="firstname"  autofocus required placeholder= "First Name">
-	<textarea name = "notes"></textarea>
-	<input type= "search"
-</fieldset>
-	
-	<input type="text" name="last_name" value="Last Name">
-	
-	<input type="text" name="email" value="Email Address">
-	
-	<input type="text" name="notes" value="Notes">
-	
-	<input type="submit" name="Press Here to Submit" value = "Submit Contact">
+			<label for = "lastname">Last Name</label>
+			<input type="text" name="last_name" id="lastname" required placeholder= "Last Name">
 
+			<label for = "e.mail">Email Address</label>
+			<input type="text" name="email" id="e.mail" required placeholder= "Email Address">
 
+			<label for = "notez">Notes</label>
+			<textarea name = "notes"> </textarea>
 
-
-
+			<input type="submit" name="Press Here to Submit" value = "Submit Contact">
+		</fieldset>
 </form>
