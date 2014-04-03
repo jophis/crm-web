@@ -9,11 +9,9 @@
 	<input type= "submit">
 </fieldset>
 
-this is where the search results go, if there are any.
+<h1>Search Results</h1>
 
-<ul>
-	<li>name one</li>
-	<li>name one</li>
-	<li>name one</li>
-	<li>name one</li>
-</ul>
+
+<% @contacts.each do |contact| %>
+		<p><a href="/contacts/<%= contact.id %>"><%= contact.first_name %> <%= contact.last_name %></a></p>
+	<% end %>

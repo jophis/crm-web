@@ -29,6 +29,9 @@ class Rolodex
 		@contacts.find {|contact| contact.id == contact_id}
 	end
 
+	def find_all_by_name(lname)
+		@contacts.find_all {|contact| contact.last_name == lname}
+	end
 
 	# 	@contacts.each do |contact|
 	# 		if contact.id == contact_id
@@ -64,8 +67,8 @@ class Rolodex
 		end
 	end
 
-	def remove_contact(id)
-		@contacts.delete_if {|c| c.id == id}
+	def remove_contact(contact)
+		@contacts.delete(contact)
 	end 
 
 	def edit_contact(id, att_mod, new_att)

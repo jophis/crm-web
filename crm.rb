@@ -29,17 +29,16 @@ get '/contacts/new' do
 end
 
 get '/contacts/search' do
-	@list = []
+	@contacts = []
 	if params[:last_name]
-		@contact = @@rolodex.find(params[:last_name])
-
-		@list << @contact
+		@contacts = @@rolodex.find_all_by_name(params[:last_name])
+		puts @contacts.inspect
 
 		# if they provided search criteria, find the MATCHING contact(s) from @@rolodex.contacts
 		# and return all the results. This could be from zero to many. 
 		# "find the matching contacts that have the same last name"
 
-		@list  # this is the result of the search, not the full rolodex 		
+		 # this is the result of the search, not the full rolodex 		
 	end
 
 	erb :search_contact
@@ -77,9 +76,14 @@ put "/contacts/:id" do
   else
   	raise Sinatra::NotFound
   end
-end 
+end
 
-
-
-
-
+delete "/contacts/:id" do
+	@contact = @@rolodex.find(params[:id].to_i)
+  if @contact
+    @@rolodex.remove_contact(@contact)
+    redirect to("/contacts")
+  else
+    raise Sinatra::NotFound
+  end
+end
