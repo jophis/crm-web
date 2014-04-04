@@ -13,7 +13,7 @@ class Contact
 	property :first_name, String
 	property :last_name, String
 	property :email, String
-	property :note, String
+	property :notes, String
 end
 
 DataMapper.finalize
@@ -45,11 +45,12 @@ get '/' do
 end
 
 get '/contacts' do
+	@contacts = Contact.all
 	erb :contacts
 end
 
 get '/contacts/:id/edit' do
-	@contact = @@rolodex.find(params[:id].to_i)
+	@contact = Contact.get(params[:id].to_i)
 	if @contact
 		erb :edit_contact
 	else 
@@ -64,8 +65,8 @@ end
 get '/contacts/search' do
 	@contacts = []
 	if params[:last_name]
-		@contacts = @@rolodex.find_all_by_name(params[:last_name])
-		puts @contacts.inspect
+		@contacts = Contact.all(last_name: params[:last_name])
+
 
 		# if they provided search criteria, find the MATCHING contact(s) from @@rolodex.contacts
 		# and return all the results. This could be from zero to many. 
@@ -78,7 +79,7 @@ get '/contacts/search' do
 end
 
 get '/contacts/:id' do
-	@contact = @@rolodex.find(params[:id].to_i)
+	@contact = Contact.get(params[:id].to_i)
 	if @contact
 		erb :show_contact
 	else
@@ -91,13 +92,22 @@ get '/contacts/remove' do #file not yet created
 end
 
 post '/contacts' do
-	new_contact = Contact.new(params[:notes], params[:first_name], params[:last_name], params[:email])
-	@@rolodex.add_contact(new_contact)
+	contact = Contact.create(
+		:first_name => params[:first_name],
+		:last_name => params[:last_name],
+		:email => params[:email],
+		:notes => params[:notes]
+	)
 	redirect to ('/contacts/new')
 end
 
+# 	new_contact = Contact.new(params[:notes], params[:first_name], params[:last_name], params[:email])
+# 	@@rolodex.add_contact(new_contact)
+# 	redirect to ('/contacts/new')
+# end
+
 put "/contacts/:id" do
-	@contact = @@rolodex.find(params[:id].to_i)
+	@contact = Contact.get(params[:id].to_i)
 	if @contact
 		@contact.first_name= params[:first_name]
 		@contact.last_name = params[:last_name]
@@ -112,9 +122,9 @@ put "/contacts/:id" do
 end
 
 delete "/contacts/:id" do
-	@contact = @@rolodex.find(params[:id].to_i)
+	@contact = Contact.get(params[:id].to_i)
   if @contact
-    @@rolodex.remove_contact(@contact)
+  	@contact.destroy
     redirect to("/contacts")
   else
     raise Sinatra::NotFound
